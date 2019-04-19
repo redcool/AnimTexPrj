@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caed7bf0dabfcd4b9ac19f67efd45e4, type: 3}
+  m_Name: Footman_Default_AnimTextureManifest
+  m_EditorClassIdentifier: 
+  animInfos:
+  - clipName: Attack01
+    clipNameHash: 1331344109
+    startFrame: 0
+    endFrame: 40
+    isLoop: 0
+    length: 1.3333334
+  - clipName: Attack02
+    clipNameHash: -699145385
+    startFrame: 40
+    endFrame: 80
+    isLoop: 0
+    length: 1.3333334
+  - clipName: Death
+    clipNameHash: 646380074
+    startFrame: 80
+    endFrame: 110
+    isLoop: 0
+    length: 1
+  - clipName: GetHit
+    clipNameHash: -1949373134
+    startFrame: 110
+    endFrame: 150
+    isLoop: 0
+    length: 1.3333334
+  - clipName: Idle
+    clipNameHash: 2081823275
+    startFrame: 150
+    endFrame: 180
+    isLoop: 1
+    length: 1
+  - clipName: Run
+    clipNameHash: 1748754976
+    startFrame: 180
+    endFrame: 200
+    isLoop: 1
+    length: 0.6666667
+  - clipName: Victory
+    clipNameHash: -1090111034
+    startFrame: 200
+    endFrame: 300
+    isLoop: 0
+    length: 3.3333335
+  - clipName: Walk
+    clipNameHash: 765711723
+    startFrame: 300
+    endFrame: 340
+    isLoop: 1
+    length: 1.3333334
+  atlas: {fileID: 2800000, guid: 01310e3a3b72f344db76bef6b6297d59, type: 2}

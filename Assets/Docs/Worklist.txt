@@ -1,0 +1,35 @@
+Done:
+1 烘焙动画到纹理
+	1 动画驱动网格的顶点烘焙到纹理(叫动画纹理).
+	2 将单个角色所有动画烘焙后,组合到动画纹理图集.
+2 播放动画	
+	1 播放单个动画
+		原理:顶点shader根据SV_VertexID来从动画纹理中获取对应的顶点数据并使用.
+		根据SV_VertexID,动画信息等播放不同的动画
+	2 根据动画信息混合播放2个动画
+		clip1[startTime,endTime]
+		clip2[startTime,endTime]
+
+3 组合Mecanim
+	使用mecanim状态机控制逻辑,TextureAnimation只播放动画.
+	* 不需要挂点,不需要原始动画剪辑
+
+4 挂点的解决.
+	* 模型 animation type = Generic, 并暴露预期骨骼(transform)以保持挂点
+	* 不同层次有不同的网格,须确保gpu instancing工作正常.
+	目前的方案:
+		* 使用Animator在cpu上做骨骼变换.
+		* macanim状态机需要原始动画剪辑.
+5 大规模骨骼
+	不使用挂点功能时,无需任何操作
+	使用挂点时
+		1 暴露需要的骨骼
+		(未完成)2 从动画剪辑中提取需要的动画数据曲线,存放到Manifest中,运行时采样该曲线驱动目标骨骼.
+
+TODO:
+	1. 提供烘焙率参数(控制烘焙的动画纹理大小)
+	2 不同的skinmesh需要合并
+	
+	* 3 skinmesh换装的方案
+		直接生成新的装备角色.
+		使用新的配套动画纹理.
