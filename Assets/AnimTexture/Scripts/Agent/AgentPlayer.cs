@@ -17,10 +17,12 @@
         {
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
+
+            //BaseComponentSystem.GetInstance<AgentPlayerSystem>().Add(this);
         }
 
         // Update is called once per frame
-        void Update()
+        public void Update()
         {
             ClickMove();
             //InputMove();

@@ -53,7 +53,7 @@ unity蒙皮动画的工作流程:
 		2 选择该prefab,点击AnimTexture/BakeAnimToAtlas
 			AnimTexPath会出现bake的动画纹理与动画纹理信息文件.
 	2 播放动画
-		1 prefab拖到Hierarchy
+		1 prefab拖到Hierarchy或空节点
 			1 附加MeshFilter,选模型mesh
 			2 附加MeshRenderer.
 			3 TextureAnimation组件.

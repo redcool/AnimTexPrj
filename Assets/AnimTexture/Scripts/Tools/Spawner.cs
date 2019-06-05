@@ -15,10 +15,12 @@
         public float startTime = 0;
 
         public bool spawn;
+        public Transform root;
         // Start is called before the first frame update
         void Start()
         {
-
+            if (!root)
+                root = transform;
         }
 
         // Update is called once per frame
@@ -28,14 +30,22 @@
             {
                 spawn = false;
 
-                for (int i = 0; i < count; i++)
-                {
-                    var p = Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
+                StartCoroutine(WaitForSpawn());
+            }
+        }
 
-                    var pos = Random.insideUnitSphere * radius;
-                    pos.y = Random.Range(-y, y);
-                    p.transform.localPosition = pos;
-                }
+        IEnumerator WaitForSpawn()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                var p = Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform);
+
+                var pos = Random.insideUnitSphere * radius;
+                pos.y = Random.Range(-y, y);
+                p.transform.parent = root;
+                p.transform.localPosition = pos;
+
+                yield return 0;
             }
         }
     }

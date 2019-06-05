@@ -29,7 +29,6 @@
 
         Renderer r;
         MaterialPropertyBlock block;
-        Coroutine crossLerpCoroutine;
         bool needUpdateBlock;
 
         Dictionary<int, int> clipNameHashDict = new Dictionary<int, int>();
@@ -46,10 +45,13 @@
             SetupDict();
 
             Play(curIndex);
+
+            //BaseComponentSystem.GetInstance<TextureAnimationSystem>().Add(this);
         }
 
         // Update is called once per frame
-        void Update()
+        //public void Update()
+        public void Update()
         {
             playTime += Time.deltaTime;
             UpdatePlayTime();
@@ -140,10 +142,9 @@
             UpdateAnimTime(index, ID_START_FRAME, ID_END_FRAME);
             UpdateAnimTime(nextIndex, ID_NEXT_START_FRAME, ID_NEXT_END_FRAME);
 
-            if(crossLerpCoroutine != null)
-                StopCoroutine(crossLerpCoroutine);
 
-            crossLerpCoroutine = StartCoroutine(WaitForUpdateCrossLerp(nextIndex,fadeTime));
+            StopCoroutine("WaitForUpdateCrossLerp");
+            StartCoroutine(WaitForUpdateCrossLerp(nextIndex,fadeTime));
         }
 
         IEnumerator WaitForUpdateCrossLerp(int index,float fadeTime)
@@ -164,7 +165,6 @@
                 yield return 0;
             }
             UpdateCrossLerp(1);
-            StopCoroutine(crossLerpCoroutine);
         }
     }
 }

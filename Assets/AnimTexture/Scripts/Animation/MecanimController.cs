@@ -26,10 +26,12 @@
             var stateInfo = animator.GetCurrentAnimatorStateInfo(layerIndex);
             var curIndex = texAnim.GetClipIndex(stateInfo.shortNameHash);
             texAnim.Play(curIndex);
+
+            //BaseComponentSystem.GetInstance<MecanimControllerSystem>().Add(this);
         }
 
         // Update is called once per frame
-        void Update()
+        public void Update()
         {
             if (!animator)
                 return;

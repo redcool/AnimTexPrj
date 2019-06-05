@@ -19,46 +19,22 @@ MonoBehaviour:
     endFrame: 40
     isLoop: 0
     length: 1.3333334
-  - clipName: Attack02
-    clipNameHash: -699145385
-    startFrame: 40
-    endFrame: 80
-    isLoop: 0
-    length: 1.3333334
   - clipName: Death
     clipNameHash: 646380074
-    startFrame: 80
-    endFrame: 110
+    startFrame: 40
+    endFrame: 70
     isLoop: 0
     length: 1
-  - clipName: GetHit
-    clipNameHash: -1949373134
-    startFrame: 110
-    endFrame: 150
-    isLoop: 0
-    length: 1.3333334
   - clipName: Idle
     clipNameHash: 2081823275
-    startFrame: 150
-    endFrame: 180
+    startFrame: 70
+    endFrame: 100
     isLoop: 1
     length: 1
   - clipName: Run
     clipNameHash: 1748754976
-    startFrame: 180
-    endFrame: 200
+    startFrame: 100
+    endFrame: 120
     isLoop: 1
     length: 0.6666667
-  - clipName: Victory
-    clipNameHash: -1090111034
-    startFrame: 200
-    endFrame: 300
-    isLoop: 0
-    length: 3.3333335
-  - clipName: Walk
-    clipNameHash: 765711723
-    startFrame: 300
-    endFrame: 340
-    isLoop: 1
-    length: 1.3333334
   atlas: {fileID: 2800000, guid: 01310e3a3b72f344db76bef6b6297d59, type: 2}
